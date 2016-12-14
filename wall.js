@@ -2,7 +2,7 @@ function Wall(){
 	this.top = random(height/2);
 	this.bottom = random(height/2);
 	this.x = width;
-	this.speed = 5;
+	this.speed = 2;
 
 	this.show = function(){
 		fill(255);

@@ -12,6 +12,10 @@ function draw(){
 	bird.update();
 	bird.show();
 
+	if(frameCount % 100 == 0){
+		walls.push(new Wall());
+	}
+
 	for(var i = 0; i < walls.length; i++){
 		walls[i].show();
 		walls[i].update();
