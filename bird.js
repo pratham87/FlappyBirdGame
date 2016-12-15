@@ -31,4 +31,5 @@ function Bird(){
 		this.velocity = this.velocity - this.jump;
 		// this.y = this.y + 50;
 	}
+
 }

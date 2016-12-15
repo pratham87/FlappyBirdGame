@@ -2,7 +2,7 @@ var bird;
 var walls = [];
 
 function setup() {
-	createCanvas(400, 600);
+	createCanvas(600, 600);
 	bird = new Bird();
 	walls.push(new Wall());
 }
@@ -18,7 +18,12 @@ function draw(){
 		if(walls[i].hit(bird)){
 			console.log("Collision Occured");
 		}
+		// else{
+		// 	fill('rgb(0,255,0)');
+		// 	walls[i].score();
+		// }
 
+		//Once the wall is offscreen then delete it from walls array
 		if(walls[i].offScreen()){
 			walls.splice(i, 1);
 		}

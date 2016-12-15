@@ -1,9 +1,12 @@
 function Wall(){
-	this.top = random(height/2);
-	this.bottom = random(height/2);
+	var spacing = random(30, height/4);
+	var spacing_center = random(spacing, height - spacing);
+	var score = 0;
+	this.top = spacing_center - spacing/2;
+	this.bottom = height - (spacing_center + spacing/2);
 	this.x = width;
-	this.w = 20;
-	this.speed = 2;
+	this.w = 30;
+	this.speed = 4;
 	this.highlight = false;
 
 	this.show = function(){
@@ -11,8 +14,8 @@ function Wall(){
 		if(this.highlight){
 			fill(255,204,0);
 		}
-		rect(this.x, 0, this.w, this.top);
-		rect(this.x, height - this.bottom, this.w, this.bottom);
+		rect(this.x, 0, this.w, this.top, 0, 0, 10, 10); //top wall
+		rect(this.x, height - this.bottom, this.w, this.bottom, 10, 10, 0, 0); //bottom wall
 	}
 
 	this.hit = function(bird){
@@ -33,4 +36,10 @@ function Wall(){
 	this.offScreen = function(){
 		return(this.x < -this.w);
 	}
+
+	// this.score = function(){
+	// 	var score_text = "Score: " + score;
+	// 	text(score_text, width - 70, height - 575);
+	// }
+
 }
