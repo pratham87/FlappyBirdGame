@@ -16,9 +16,14 @@ function draw(){
 		walls.push(new Wall());
 	}
 
-	for(var i = 0; i < walls.length; i++){
+	//Keeping the walls array size 2
+	for(var i = walls.length - 1; i >= 0; i--){
 		walls[i].show();
 		walls[i].update();
+
+		if(walls[i].offScreen()){
+			walls.splice(i, 1);
+		}
 	}
 }
 
